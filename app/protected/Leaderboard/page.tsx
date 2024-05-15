@@ -1,8 +1,9 @@
 import React from 'react'
+import BackBtn from '@/components/BackBtn'
 
 const Leaderboard = () => {
   return (
-    <div>Leaderboard</div>
+    <BackBtn />
   )
 }
 

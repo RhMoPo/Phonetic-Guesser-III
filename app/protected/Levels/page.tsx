@@ -1,8 +1,9 @@
 import React from 'react'
+import BackBtn from '@/components/BackBtn'
 
 const Levels = () => {
   return (
-    <div>Levels</div>
+    <BackBtn />
   )
 }
 

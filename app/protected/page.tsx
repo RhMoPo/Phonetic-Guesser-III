@@ -16,8 +16,8 @@ export default async function ProtectedPage() {
 
   return (
     <>
-      <AuthButton />
       <Menu />
+      <AuthButton />
     </>
   );
 }

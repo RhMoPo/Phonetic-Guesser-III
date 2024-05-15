@@ -37,10 +37,9 @@ const Menu = () => {
 
   return (
     <>
-      <div className="flex items-center mb-56 mx-auto"></div>
+      <div className="flex items-center mb-56 mx-auto mt-10"></div>
       <nav>
-        <ul className="flex flex-col gap-10">
-          {" "}
+        <ul className="flex flex-col gap-10 lg:flex-row justify-center lg:mt-48">
           {/* Increased gap size */}
           {menuList.map((item, index) => (
             <li key={item.name}>
@@ -51,7 +50,9 @@ const Menu = () => {
               >
                 <span className="absolute top-0 left-0 mt-2 ml-2 h-full w-full rounded bg-black"></span>
                 <span
-                  className={`relative inline-block h-full w-full rounded-lg border-4 border-black bg-white px-6 py-3 text-xl font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900 ${pathName === item.href ? "bg-yellow-400 text-gray-900" : ""}`}
+                  className={`relative inline-block h-full w-full rounded-lg border-4 border-black bg-white px-6 py-3 text-xl font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900 z-60 ${
+                    pathName === item.href ? "bg-yellow-400 text-gray-900" : ""
+                  }`}
                 >
                   {item.icon} {item.name}
                 </span>
@@ -60,12 +61,8 @@ const Menu = () => {
           ))}
         </ul>
       </nav>
-
-      <footer className="mb-28"></footer>
     </>
   );
 };
 
 export default Menu;
-
-

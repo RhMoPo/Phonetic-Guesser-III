@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import BackBtn from "@/components/BackBtn";
 
 const FreePlay = () => {
-  return (
-    <div>FreePlay</div>
-  )
-}
+  return <BackBtn />;
+};
 
-export default FreePlay
+export default FreePlay;
