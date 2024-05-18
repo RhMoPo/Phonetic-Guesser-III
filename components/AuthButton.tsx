@@ -21,7 +21,7 @@ export default async function AuthButton() {
   return user ? (
     <div className="flex items-center gap-4 mt-4">
       <form action={signOut}>
-        <button className="py-2 px-4 rounded-md no-underline bg-white mt-10 border rounded-lg border-4 border-black bg-white px-6 py-3 text-xl font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900">
+        <button className="py-2 px-4 rounded-md no-underline bg-white mt-10 border rounded-lg border-4 border-black bg-white px-6 py-3 text-xl font-bold text-black transition duration-100 hover:bg-mint hover:text-gray-900">
           Logout
         </button>
       </form>

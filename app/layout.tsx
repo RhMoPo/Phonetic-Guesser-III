@@ -1,6 +1,5 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import Logo from "../components/Logo";
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
