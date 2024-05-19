@@ -3,7 +3,8 @@ import BackBtn from '@/components/BackBtn'
 
 const HTP = () => {
   return (
-      <BackBtn />
+    <BackBtn />
+    
   );
 }
 

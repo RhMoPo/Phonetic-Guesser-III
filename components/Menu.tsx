@@ -50,7 +50,7 @@ const Menu = () => {
               >
                 <span className="absolute top-0 left-0 mt-2 ml-2 h-full w-full rounded bg-black"></span>
                 <span
-                  className={`relative inline-block h-full w-full rounded-lg border-4 border-black bg-white px-6 py-3 text-xl font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900 z-60 ${
+                  className={`relative inline-block h-full w-full rounded-lg border-4 border-black bg-white px-6 py-3 text-xl font-bold text-black transition duration-100 hover:bg-mint hover:text-gray-900 z-60 ${
                     pathName === item.href ? "bg-yellow-400 text-gray-900" : ""
                   }`}
                 >
