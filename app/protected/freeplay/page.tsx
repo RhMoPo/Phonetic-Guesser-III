@@ -4,7 +4,6 @@ import BackBtn from "@/components/BackBtn";
 import PhoneticFetcher from "@/components/PhoneticFetcher";
 
 const FreePlay = () => {
-
   return (
     <>
       <BackBtn />

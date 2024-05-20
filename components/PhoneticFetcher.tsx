@@ -73,9 +73,9 @@ const PhoneticFetcher: React.FC = () => {
     e.preventDefault();
     if (guess.trim().toLowerCase() === phonetic?.word.toLowerCase()) {
       setMessage("Correct! Fetching a new word...");
-      
+      fetchRandomPhonetic();
     } else {
-      setMessage("Incorrect, try again.");
+      setMessage("Incorrect");
     }
   };
 
@@ -112,12 +112,12 @@ const PhoneticFetcher: React.FC = () => {
                 <FaArrowAltCircleRight className="text-2xl" />
               </button>
             </form>
-            {message && <p className="mt-2 text-green-200">{message}</p>}
+            {message && <p className="mt-2 text-red-500 text-center">{message}</p>}
             <div className="flex mt-2 space-x-2">
               <SkipButton onSkip={handleSkip} />
               <HintButton onHint={handleHint} showHint={showHint} />
             </div>
-            {showHint && (
+            <div>{showHint && (
               <div className="mt-4 p-4 border rounded max-h-40 overflow-y-auto">
                 <ul className="list-disc list-inside">
                   {phonetic.definitions.map((definition, index) => (
@@ -125,7 +125,9 @@ const PhoneticFetcher: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            )}
+            )}</div>
+            
+            
           </div>
         </>
       )}
