@@ -11,7 +11,7 @@ interface HintButtonProps {
 const HintButton: React.FC<HintButtonProps> = ({
   onHint,
   showHint,
-  initialTop = "50%",
+  initialTop = "30%",
   initialLeft = "50%",
 }) => {
   const [position, setPosition] = useState({

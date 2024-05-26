@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <p>Phonetic Guesser by Rhys Postans</p>
         <div className="flex justify-center space-x-4 mt-2">
           <a
-            href="https://www.linkedin.com/in/your-linkedin-profile"
+            href="https://www.linkedin.com/in/rhyspostans/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline flex items-center"
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             LinkedIn
           </a>
           <a
-            href="https://github.com/your-github-username"
+            href="https://github.com/RhMoPo"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline flex items-center"
