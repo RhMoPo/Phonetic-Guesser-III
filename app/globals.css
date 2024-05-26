@@ -40,3 +40,13 @@
     transform: translateY(0);
   }
 }
+
+/* styles.css */
+.icon-shadow {
+  color: #00C853; /* Mint color */
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.5), /* Horizontal shadow */
+    1px 1px 2px rgba(0, 0, 0, 0.5); /* Vertical shadow */
+}
+
+
