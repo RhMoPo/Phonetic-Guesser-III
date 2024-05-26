@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { fetchRandomPhonetic } from "../utils/supabase/fetch/fetchPhonetic";
+import { fetchUserScores } from "../utils/supabase/fetch/fetchUserScores";
+import { updateScore } from "../utils/supabase/fetch/updateScore";
 import SkipButton from "../components/SkipButton";
 import HintButton from "../components/HintButton";
 import PhoneticDisplay from "../components/PhoneticDisplay";
 import GuessInputForm from "../components/GuessInputForm";
 import HintBox from "../components/HintBox";
+import { supabase } from "../library/supabaseClient";
 
 type Phonetic = {
   word: string;
@@ -17,6 +20,24 @@ const PhoneticFetcher: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [message, setMessage] = useState<string>("");
   const [showHint, setShowHint] = useState<boolean>(false);
+  const [userId, setUserId] = useState<string | null>(null);
+  const [score, setScore] = useState<number>(0);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const { data, error } = await supabase.auth.getUser();
+      if (error || !data.user) {
+        console.error("Error fetching user:", error || "No user logged in.");
+      } else {
+        setUserId(data.user.id);
+        const userScores = await fetchUserScores();
+        setScore(userScores.score);
+      }
+    };
+
+    loadUser();
+    loadPhonetic();
+  }, []);
 
   const loadPhonetic = async () => {
     setLoading(true);
@@ -29,13 +50,14 @@ const PhoneticFetcher: React.FC = () => {
     setLoading(false);
   };
 
-  useEffect(() => {
-    loadPhonetic();
-  }, []);
-
-  const handleGuessSubmit = (guess: string) => {
+  const handleGuessSubmit = async (guess: string) => {
     if (guess.trim().toLowerCase() === phonetic?.word.toLowerCase()) {
       setMessage("Correct! Fetching a new word...");
+      if (userId) {
+        await updateScore(userId, 1);
+        const updatedScores = await fetchUserScores();
+        setScore(updatedScores.score);
+      }
       loadPhonetic();
     } else {
       setMessage("Incorrect");
@@ -68,6 +90,9 @@ const PhoneticFetcher: React.FC = () => {
           </div>
           <div className="w-full max-w-md mt-4">
             <HintBox definitions={phonetic.definitions} showHint={showHint} />
+          </div>
+          <div className="w-full max-w-md mt-4 text-center">
+            <p>Score: {score}</p>
           </div>
         </>
       )}
