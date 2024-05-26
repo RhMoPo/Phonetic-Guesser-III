@@ -4,7 +4,7 @@ const Header: React.FC = () => {
       <img
         src="/Header.svg"
         alt="Header Image"
-        className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 z-1"
+        className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4"
       />
     </header>
   );
