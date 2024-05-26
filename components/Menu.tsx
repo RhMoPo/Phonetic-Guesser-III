@@ -33,12 +33,12 @@ const Menu = () => {
       href: "/protected/HTP",
       aria: "Link to leaderboard page",
     },
-    {
-      name: "test",
-      icon: <FaQuestion className="inline-block mr-4 h-10 w-10" />,
-      href: "/protected/test",
-      aria: "Link to leaderboard page",
-    },
+    // {
+    //   name: "test",
+    //   icon: <FaQuestion className="inline-block mr-4 h-10 w-10" />,
+    //   href: "/protected/test",
+    //   aria: "Link to leaderboard page",
+    // },
   ];
 
   return (
